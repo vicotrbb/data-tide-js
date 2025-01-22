@@ -1,0 +1,52 @@
+{
+  "name": "data-tide-js",
+  "version": "0.1.0",
+  "description": "A powerful javascript library to process big chunks of data",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --detectOpenHandles --config jest.config.js",
+    "test:watch": "jest --watch --detectOpenHandles --config jest.config.js",
+    "lint": "eslint src/**/*.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorbona/data-tide-js.git"
+  },
+  "keywords": [
+    "mapreduce",
+    "mapreduce-js",
+    "thread",
+    "threads",
+    "data",
+    "processing",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Victor Bona",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorbona/data-tide-js/issues"
+  },
+  "homepage": "https://github.com/victorbona/data-tide-js#readme",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
