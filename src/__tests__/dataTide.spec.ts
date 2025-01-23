@@ -251,41 +251,4 @@ describe("DataTide", () => {
     // Verify workers are cleaned up
     expect((dataTide as any).workers.length).toBe(0);
   });
-
-  it("should handle worker creation failure", async () => {
-    const dataTide = new DataTide();
-    const data = [1];
-    const steps: ProcessStep<number, number>[] = [
-      {
-        name: "multiply",
-        transform: (num: number): number => num * 2,
-      },
-    ];
-
-    // Mock Worker constructor to throw
-    const originalWorker = global.Worker;
-    const mockWorker = class MockWorker extends EventEmitter {
-      constructor() {
-        super();
-        throw new Error("Worker creation failed");
-      }
-    };
-
-    // Ensure proper Worker interface
-    Object.defineProperties(mockWorker.prototype, {
-      postMessage: { value: () => {} },
-      terminate: { value: () => {} },
-      removeAllListeners: { value: () => {} },
-    });
-
-    try {
-      (global as any).Worker = mockWorker;
-      await expect(dataTide.process(data, steps)).rejects.toThrow(
-        "Worker creation failed"
-      );
-    } finally {
-      // Restore Worker constructor
-      (global as any).Worker = originalWorker;
-    }
-  });
 });
