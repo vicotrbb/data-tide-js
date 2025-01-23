@@ -1,6 +1,6 @@
 {
   "name": "data-tide-js",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A powerful javascript library to process big chunks of data",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
