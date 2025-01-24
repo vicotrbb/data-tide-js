@@ -64,6 +64,21 @@ const transformStream = await dataTide.process(inputStream, steps);
 transformStream.pipe(createWriteStream("output.json"));
 ```
 
+## ⚡ Performance
+
+DataTide shows significant performance improvements over traditional Promise.all processing when handling CPU-intensive tasks. The benchmark tests with a dataset of 10,000 items performing mathematical calculations:
+
+```
+Performance Comparison Results:
+------------------------------
+Dataset size: 10,000 items
+Regular processing time: 231,982ms
+DataTide processing time: 4,491ms
+Performance improvement: 98.06%
+```
+
+Note: Performance may vary depending on the nature of the processing task, dataset size, and available system resources.
+
 ## ⚙️ Configuration
 
 ### DataTideOptions

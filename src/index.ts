@@ -18,6 +18,7 @@ export class DataTide extends EventEmitter {
   constructor(options: Partial<DataTideOptions> = {}) {
     super();
     this.options = { ...defaultOptions, ...options };
+    this.setMaxListeners(20);
   }
 
   private createStream(data: unknown[]): Readable {

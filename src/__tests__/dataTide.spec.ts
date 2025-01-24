@@ -1,7 +1,6 @@
 import DataTide from "../index";
 import { ProcessStep } from "../types";
 import { Readable, Transform } from "stream";
-import { EventEmitter } from "events";
 
 describe("DataTide", () => {
   it("should process array data with single step", async () => {
